@@ -10,31 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Template4439
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для _4439_Logashin.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class _4439_Logashin : Window
     {
-        public MainWindow()
+        public _4439_Logashin()
         {
             InitializeComponent();
-        }
-
-        private void BnTask_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void LogashinBtn_Click(object sender, RoutedEventArgs e)
-        {
-            _4439_Logashin window = new _4439_Logashin();
-            window.Show();
-            
         }
     }
 }
