@@ -36,5 +36,10 @@ namespace Template4439
             window.Show();
             
         }
+
+        private void Minnullina_Click(object sender, RoutedEventArgs e)
+        {
+            new _4439_Minnullina().Show();
+        }
     }
 }
