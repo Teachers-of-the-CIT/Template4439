@@ -38,5 +38,6 @@
         <Button Grid.Row="13" Content="Minnullina" x:Name="Minnullina" Click="Minnullina_Click"/>
         <Button Grid.Column="0" Grid.Row="15" Content="Nagumanov Info" x:Name="LogashinBtn" Click="NagumanovBtn_Click"/>
         <Button x:Name="BnTask" Click="BnTask_Click" Content="Задача" Grid.Row="0"></Button>
+        <Button Grid.Column="0" Grid.Row="13" Content="Mingalimova Elina" x:Name="_4439_Mingalimova" Click="_4439_Mingalimova_Click"/>
     </Grid>
 </Window>
