@@ -39,7 +39,8 @@ namespace Template4439
 
         private void _4439_Mingalimova_Click(object sender, RoutedEventArgs e)
         {
-
+            _4439_Mingalimova window = new _4439_Mingalimova();
+            window.Show();
         }
     }
 }
