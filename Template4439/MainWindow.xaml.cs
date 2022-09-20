@@ -35,5 +35,10 @@ namespace Template4439
             _4439_Nagumanov window = new _4439_Nagumanov();
             window.Show();
         }
+
+        private void Minnullina_Click(object sender, RoutedEventArgs e)
+        {
+            new _4439_Minnullina().Show();
+        }
     }
 }
