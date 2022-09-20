@@ -1,1 +1,2 @@
 Logashin Eduard
+Mingalimova Elina
