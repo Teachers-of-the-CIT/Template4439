@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Template4439
 {
     /// <summary>
-    /// Логика взаимодействия для _4439_Logashin.xaml
+    /// Логика взаимодействия для _4439_Minnullina.xaml
     /// </summary>
-    public partial class _4439_Logashin : Window
+    public partial class _4439_Minnullina : Window
     {
-        public _4439_Logashin()
+        public _4439_Minnullina()
         {
             InitializeComponent();
         }

@@ -30,11 +30,15 @@ namespace Template4439
 
         }
 
-        private void LogashinBtn_Click(object sender, RoutedEventArgs e)
+        private void NagumanovBtn_Click(object sender, RoutedEventArgs e)
         {
-            _4439_Logashin window = new _4439_Logashin();
+            _4439_Nagumanov window = new _4439_Nagumanov();
             window.Show();
-            
+        }
+
+        private void Minnullina_Click(object sender, RoutedEventArgs e)
+        {
+            new _4439_Minnullina().Show();
         }
 
         private void _4439_Mingalimova_Click(object sender, RoutedEventArgs e)
