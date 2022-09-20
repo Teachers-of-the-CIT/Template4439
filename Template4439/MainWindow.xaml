@@ -19,7 +19,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*" ></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -36,6 +36,7 @@
         </Grid.RowDefinitions>
         <Button Grid.Column="0" Grid.Row="11" Content="Logashin Info" x:Name="LogashinBtn" Click="LogashinBtn_Click"/>
         <Button Grid.Row="13" Content="Minnullina" x:Name="Minnullina" Click="Minnullina_Click"/>
+        <Button Grid.Column="0" Grid.Row="15" Content="Nagumanov Info" x:Name="LogashinBtn" Click="NagumanovBtn_Click"/>
         <Button x:Name="BnTask" Click="BnTask_Click" Content="Задача" Grid.Row="0"></Button>
     </Grid>
 </Window>
