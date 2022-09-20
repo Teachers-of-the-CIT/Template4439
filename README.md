@@ -1,1 +1,1 @@
-Logashin Eduard
+Nagumanov Ilshat

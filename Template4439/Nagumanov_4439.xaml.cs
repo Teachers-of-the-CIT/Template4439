@@ -17,9 +17,9 @@ namespace Template4439
     /// <summary>
     /// Логика взаимодействия для _4439_Logashin.xaml
     /// </summary>
-    public partial class _4439_Logashin : Window
+    public partial class _4439_Nagumanov : Window
     {
-        public _4439_Logashin()
+        public _4439_Nagumanov()
         {
             InitializeComponent();
         }
