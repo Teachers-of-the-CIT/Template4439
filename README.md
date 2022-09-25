@@ -3,3 +3,4 @@ Mingalimova Elina
 Minnullina Kamilya
 Nagumanov Ilshat
 Bikbaev Ruslan
+Burkova Katerina
