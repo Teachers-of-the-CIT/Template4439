@@ -40,5 +40,25 @@ namespace Template4439
         {
             new _4439_Bikbaev().Show();
         }
+
+        private void LogashinBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnBuSa1_Click(object sender, RoutedEventArgs e)
+        {
+            new _4439_Burkova().Show();
+        }
+
+        private void BtnBuSa2_Click(object sender, RoutedEventArgs e)
+        {
+            new _4439_Vakhitova().Show();
+        }
     }
 }

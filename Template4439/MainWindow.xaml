@@ -35,9 +35,11 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Button Grid.Row="2" Content="Bikbaev Info" x:Name="BikbaevBtn" Click="BikbaevBtn_Click" />
-        <Button Grid.Column="0" Grid.Row="11" Content="Logashin Info" x:Name="LogashinBtn" />
+        <Button Grid.Column="0" Grid.Row="11" Content="Logashin Info" x:Name="LogashinBtn" Click="LogashinBtn_Click" />
         <Button Grid.Row="13" Content="Minnullina" x:Name="Minnullina" Click="Minnullina_Click"/>
         <Button x:Name="BnTask" Click="BnTask_Click" Content="Задача" Grid.Row="0"></Button>
         <Button Grid.Column="0" Grid.Row="13" Content="Mingalimova Elina" x:Name="_4439_Mingalimova" />
+        <Button Grid.Row="3" x:Name="BuSa1" Content="Burkkova" Click="BtnBuSa1_Click"/>
+        <Button Grid.Row="4" x:Name="BuSa2" Content="Vakhitova" Click="BtnBuSa2_Click"/>
     </Grid>
 </Window>
