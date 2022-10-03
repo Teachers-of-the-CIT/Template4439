@@ -65,13 +65,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ExampleModel.cs">
+    <Compile Include="ExampleModel1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ExampleModel.tt</DependentUpon>
+      <DependentUpon>ExampleModel1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExampleModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExampleModel1.edmx</DependentUpon>
     </Compile>
     <Compile Include="var9.cs">
-      <DependentUpon>ExampleModel.tt</DependentUpon>
+      <DependentUpon>ExampleModel1.tt</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -80,16 +90,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ExampleModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ExampleModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ExampleModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ExampleModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -121,12 +121,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="ExampleModel.edmx">
+    <EntityDeploy Include="ExampleModel1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ExampleModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>ExampleModel1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ExampleModel.edmx.diagram">
-      <DependentUpon>ExampleModel.edmx</DependentUpon>
+    <None Include="ExampleModel1.edmx.diagram">
+      <DependentUpon>ExampleModel1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -170,15 +170,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ExampleModel.Context.tt">
+    <Content Include="ExampleModel1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ExampleModel.edmx</DependentUpon>
-      <LastGenOutput>ExampleModel.Context.cs</LastGenOutput>
+      <DependentUpon>ExampleModel1.edmx</DependentUpon>
+      <LastGenOutput>ExampleModel1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ExampleModel.tt">
+    <Content Include="ExampleModel1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ExampleModel.edmx</DependentUpon>
-      <LastGenOutput>ExampleModel.cs</LastGenOutput>
+      <DependentUpon>ExampleModel1.edmx</DependentUpon>
+      <LastGenOutput>ExampleModel1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

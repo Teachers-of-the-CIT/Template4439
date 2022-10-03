@@ -13,10 +13,10 @@ namespace Template4439
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ISRPOEntities : DbContext
+    public partial class ISRPOEntities1 : DbContext
     {
-        public ISRPOEntities()
-            : base("name=ISRPOEntities")
+        public ISRPOEntities1()
+            : base("name=ISRPOEntities1")
         {
         }
     

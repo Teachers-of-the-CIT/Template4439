@@ -60,7 +60,7 @@ namespace Template4439
             ObjWorkExcel.Quit();
             GC.Collect();
 
-            using(ISRPOEntities isrpoEntities = new ISRPOEntities())
+            using(ISRPOEntities1 isrpoEntities = new ISRPOEntities1())
             {
                 for (int i = 1; i < _rows; i++)
                 {
@@ -84,54 +84,55 @@ namespace Template4439
         {
             List<var9> all_employe;
 
-            using (ISRPOEntities isrpoEntities = new ISRPOEntities())
+            using (ISRPOEntities1 isrpoEntities = new ISRPOEntities1())
             {
                 all_employe = isrpoEntities.var9.ToList().OrderBy(s => s.input_type).ToList();
             }
 
+            int sheetCount = all_employe.GroupBy(s => s.input_type).ToList().Count();
+
             var app = new Excel.Application();
-            app.SheetsInNewWorkbook = 2;
+            app.SheetsInNewWorkbook = sheetCount;
             Excel.Workbook workbook = app.Workbooks.Add(Type.Missing);
 
-            for (int i = 0; i < 2; i++)
+            var employeCategories = all_employe.GroupBy(s => s.input_type).ToList();
+
+            for (int i = 0; i < sheetCount; i++)
             {
+                string currentCategory = employeCategories[i].Key;
+
                 int startRowIndex = 1;
                 Excel.Worksheet worksheet = app.Worksheets.Item[i + 1];
-                //worksheet.Name = Convert.ToString(all_employe[i].input_type);
-                worksheet.Cells[1][startRowIndex] = "Код клиента";
+                worksheet.Name = currentCategory;
+                worksheet.Cells[1][startRowIndex] = "Код клiента";
                 worksheet.Cells[2][startRowIndex] = "Должность";
                 worksheet.Cells[3][startRowIndex] = "Логин";
                 startRowIndex++;
 
-                var employeCategories = all_employe.GroupBy(s => s.input_type).ToList();
+                Excel.Range headerRange = worksheet.Range[worksheet.Cells[1][2], worksheet.Cells[3][2]];
+                headerRange.Merge();
+                headerRange.Value = currentCategory;
 
-                foreach (var employe in employeCategories)
+                foreach (var9 employe in all_employe)
                 {
-                    if (employe.Key == all_employe[i].input_type)
+                    var e1 = employe.input_type;
+                    if (employe.input_type.Equals(currentCategory))
                     {
-                        Excel.Range headerRange = worksheet.Range[worksheet.Cells[1][2], worksheet.Cells[3][2]];
-                        headerRange.Merge();
-                        headerRange.Value = all_employe[i].input_type;
-
                         startRowIndex++;
-
-                        foreach (var9 var9 in all_employe)
-                        {
-                            if (employe.Key == var9.input_type)
-                            {
-                                worksheet.Cells[1][startRowIndex] = var9.employe_id;
-                                worksheet.Cells[2][startRowIndex] = var9.post;
-                                worksheet.Cells[3][startRowIndex] = var9.login;
-                                startRowIndex++;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        continue;
+                        worksheet.Cells[1][startRowIndex] = employe.employe_id;
+                        worksheet.Cells[2][startRowIndex] = employe.post;
+                        worksheet.Cells[3][startRowIndex] = employe.login;
                     }
                 }
-
+                Excel.Range rangeBorders = worksheet.Range[worksheet.Cells[1][1],
+                worksheet.Cells[2][startRowIndex - 1]];
+                rangeBorders.Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle =
+                rangeBorders.Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle =
+                rangeBorders.Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle =
+                rangeBorders.Borders[Excel.XlBordersIndex.xlEdgeRight].LineStyle =
+                rangeBorders.Borders[Excel.XlBordersIndex.xlInsideHorizontal].LineStyle =
+                rangeBorders.Borders[Excel.XlBordersIndex.xlInsideVertical].LineStyle = Excel.XlLineStyle.xlContinuous;
+                worksheet.Columns.AutoFit();
             }
             MessageBox.Show("export success");
             app.Visible = true;

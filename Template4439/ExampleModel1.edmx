@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище ISRPOModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище ISRPOModel1" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="var9">
           <Key>
             <PropertyRef Name="employe_id" />
@@ -17,14 +17,14 @@
           <Property Name="last_input" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="input_type" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="Хранилище ISRPOModelContainer">
+        <EntityContainer Name="Хранилище ISRPOModel1Container">
           <EntitySet Name="var9" EntityType="Self.var9" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ISRPOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ISRPOModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="var9">
           <Key>
             <PropertyRef Name="employe_id" />
@@ -37,7 +37,7 @@
           <Property Name="last_input" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="input_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="ISRPOEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ISRPOEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="var9" EntityType="Self.var9" />
         </EntityContainer>
       </Schema>
@@ -45,9 +45,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ISRPOModelContainer" CdmEntityContainer="ISRPOEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ISRPOModel1Container" CdmEntityContainer="ISRPOEntities1">
           <EntitySetMapping Name="var9">
-            <EntityTypeMapping TypeName="ISRPOModel.var9">
+            <EntityTypeMapping TypeName="ISRPOModel1.var9">
               <MappingFragment StoreEntitySet="var9">
                 <ScalarProperty Name="employe_id" ColumnName="employe_id" />
                 <ScalarProperty Name="post" ColumnName="post" />
