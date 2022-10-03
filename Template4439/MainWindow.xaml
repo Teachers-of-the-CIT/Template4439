@@ -34,7 +34,9 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Grid.Column="0" Grid.Row="15" Content="Nagumanov Info" x:Name="LogashinBtn" Click="NagumanovBtn_Click"/>
-        <Button x:Name="BnTask" Click="BnTask_Click" Content="Задача" Grid.Row="0"></Button>
+        <Button Grid.Row="15" Content="Nagumanov Info" x:Name="NagumanovBtn" Click="NagumanovBtn_Click"/>
+        <Button x:Name="BnTask" Content="Задача" Grid.Row="0"></Button>
+        <Button Grid.Row="3" Content="Импорт данных" x:Name="importBtn" Click="importBtn_Click"></Button>
+        <Button Grid.Row="5" Content="Экспорт в Excel" x:Name="exportBtn" Click="exportBtn_Click"></Button>
     </Grid>
 </Window>
