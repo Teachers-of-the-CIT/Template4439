@@ -2,17 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Template4439
@@ -101,7 +91,7 @@ namespace Template4439
             {
                 string currentCategory = employeCategories[i].Key;
 
-                int startRowIndex = 1;
+                int startRowIndex = 2;
                 Excel.Worksheet worksheet = app.Worksheets.Item[i + 1];
                 worksheet.Name = currentCategory;
                 worksheet.Cells[1][startRowIndex] = "Код клiента";
@@ -109,23 +99,25 @@ namespace Template4439
                 worksheet.Cells[3][startRowIndex] = "Логин";
                 startRowIndex++;
 
-                Excel.Range headerRange = worksheet.Range[worksheet.Cells[1][2], worksheet.Cells[3][2]];
+                Excel.Range headerRange = worksheet.Range[worksheet.Cells[1][1], worksheet.Cells[3][1]];
                 headerRange.Merge();
                 headerRange.Value = currentCategory;
+                headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                headerRange.Font.Italic = true;
 
                 foreach (var9 employe in all_employe)
                 {
                     var e1 = employe.input_type;
                     if (employe.input_type.Equals(currentCategory))
                     {
-                        startRowIndex++;
                         worksheet.Cells[1][startRowIndex] = employe.employe_id;
                         worksheet.Cells[2][startRowIndex] = employe.post;
                         worksheet.Cells[3][startRowIndex] = employe.login;
+                        startRowIndex++;
                     }
                 }
                 Excel.Range rangeBorders = worksheet.Range[worksheet.Cells[1][1],
-                worksheet.Cells[2][startRowIndex - 1]];
+                worksheet.Cells[3][startRowIndex - 1]];
                 rangeBorders.Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle =
                 rangeBorders.Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle =
                 rangeBorders.Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle =
