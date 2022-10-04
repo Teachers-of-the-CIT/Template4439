@@ -60,5 +60,10 @@ namespace Template4439
         {
             new _4439_Vakhitova().Show();
         }
+
+        private void Khayrullov_Click(object sender, RoutedEventArgs e)
+        {
+            new _4439_Khayrullov().Show();
+        }
     }
 }
