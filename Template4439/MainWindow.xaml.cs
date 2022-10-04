@@ -60,5 +60,15 @@ namespace Template4439
         {
             new _4439_Vakhitova().Show();
         }
+
+        private void Petrova_Click(object sender, RoutedEventArgs e)
+        {
+            new _4439_Petrova().Show();
+        }
+
+        private void Kostyaeva_Click(object sender, RoutedEventArgs e)
+        {
+            new _4439_Kostyaeva().Show();
+        }
     }
 }

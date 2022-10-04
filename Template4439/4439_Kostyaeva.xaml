@@ -1,0 +1,14 @@
+﻿<Window x:Class="Template4439._4439_Kostyaeva"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Template4439"
+        mc:Ignorable="d"
+        Title="_4439_Kostyaeva" Height="450" Width="800" Background="PeachPuff">
+    <Grid>
+        <Label Content="Kostyaeva Sonya" HorizontalAlignment="Left" Margin="181,64,0,0" VerticalAlignment="Top" FontSize="50" FontFamily="Felix Titling"/>
+        <Label Content="Age: 20" HorizontalAlignment="Left" Margin="320,187,0,0" VerticalAlignment="Top" FontSize="50" FontFamily="Felix Titling"/>
+
+    </Grid>
+</Window>

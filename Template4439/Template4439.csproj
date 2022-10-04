@@ -64,7 +64,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="4439_Kostyaeva.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="4439_Minnullina.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="4439_Petrova.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -82,8 +90,14 @@
     <Compile Include="4439_Burkova.xaml.cs">
       <DependentUpon>4439_Burkova.xaml</DependentUpon>
     </Compile>
+    <Compile Include="4439_Kostyaeva.xaml.cs">
+      <DependentUpon>4439_Kostyaeva.xaml</DependentUpon>
+    </Compile>
     <Compile Include="4439_Minnullina.xaml.cs">
       <DependentUpon>4439_Minnullina.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="4439_Petrova.xaml.cs">
+      <DependentUpon>4439_Petrova.xaml</DependentUpon>
     </Compile>
     <Compile Include="4439_Vakhitova.xaml.cs">
       <DependentUpon>4439_Vakhitova.xaml</DependentUpon>
