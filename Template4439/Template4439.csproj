@@ -64,6 +64,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="4439_Gilyazov.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="4439_Khayrullov.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -86,6 +90,8 @@
     <Compile Include="4439_Burkova.xaml.cs">
       <DependentUpon>4439_Burkova.xaml</DependentUpon>
     </Compile>
+    <Compile Include="4439_Gilyazov.xaml.cs">
+      <DependentUpon>4439_Gilyazov.xaml</DependentUpon>
     <Compile Include="4439_Khayrullov.xaml.cs">
       <DependentUpon>4439_Khayrullov.xaml</DependentUpon>
     </Compile>
