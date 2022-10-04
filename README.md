@@ -5,3 +5,6 @@ Nagumanov Ilshat
 Bikbaev Ruslan
 Burkova Katerina
 Gilyazov Ranel
+Khayrullov Avel
+Krasnov Elisei
+
