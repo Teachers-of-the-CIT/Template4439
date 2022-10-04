@@ -106,7 +106,7 @@
       <DependentUpon>4439_Kostyaeva.xaml</DependentUpon>
     <Compile Include="4439_Gilyazov.xaml.cs"/>
       <DependentUpon>4439_Gilyazov.xaml</DependentUpon>
-    <Compile Include="4439_Khayrullo.xaml.cs">
+    <Compile Include="4439_Khayrullov.xaml.cs">
       <DependentUpon>4439_Khayrullov.xaml</DependentUpon>
     </Compile>
     <Compile Include="4439_Minnullina.xaml.cs">
