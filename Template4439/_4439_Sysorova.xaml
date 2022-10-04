@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="_4439_Sysorova" Height="450" Width="800">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextBlock Text="Ksusha, 18" FontSize="20"/>
+        <TextBlock Text="Ksusha, 18 year" FontSize="20"/>
     </Grid>
 </Window>
