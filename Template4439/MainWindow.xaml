@@ -45,5 +45,6 @@
         <Button Grid.Row="16" Content="Petrova Tatiana" x:Name="Petrova" Click="Petrova_Click"></Button>
         <Button Grid.Row="6" Content="Gilyazov" x:Name="btnGilyazov" Click="btnGilyazov_Click" />
         <Button Grid.Row="22" x:Name="Khayrullov" Content="Khayrullov" Click="Khayrullov_Click"/>
+		<Button Grid.Row="19" x:Name="Sysorova" Content="Sysyorova" Click="Sysorova_Click"/>
     </Grid>
 </Window>
