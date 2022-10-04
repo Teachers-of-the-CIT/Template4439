@@ -41,5 +41,6 @@
         <Button Grid.Column="0" Grid.Row="13" Content="Mingalimova Elina" x:Name="_4439_Mingalimova" />
         <Button Grid.Row="3" x:Name="BuSa1" Content="Burkkova" Click="BtnBuSa1_Click"/>
         <Button Grid.Row="4" x:Name="BuSa2" Content="Vakhitova" Click="BtnBuSa2_Click"/>
+        <Button Grid.Row="6" Content="Gilyazov" x:Name="btnGilyazov" Click="btnGilyazov_Click" />
     </Grid>
 </Window>
