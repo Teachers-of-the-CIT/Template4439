@@ -75,7 +75,7 @@ namespace Template4439
         }
         private void Khayrullov_Click(object sender, RoutedEventArgs e)
         {
-            new _4439_Khayrullov().Show()
+            new _4439_Khayrullov().Show();
         }
         private void Sysorova_Click(object sender, RoutedEventArgs e)
         {
