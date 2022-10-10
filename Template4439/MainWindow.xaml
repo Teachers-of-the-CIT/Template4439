@@ -37,6 +37,8 @@
         <Button Grid.Row="15" Content="Nagumanov Info" x:Name="NagumanovBtn" Click="NagumanovBtn_Click"/>
         <Button x:Name="BnTask" Content="Задача" Grid.Row="0"></Button>
         <Button Grid.Row="3" Content="Импорт данных" x:Name="importBtn" Click="importBtn_Click"></Button>
+        <Button Grid.Row="4" Content="Импорт JSON данных" x:Name="importJsonBtn" Click="importJsonBtn_Click"></Button>
         <Button Grid.Row="5" Content="Экспорт в Excel" x:Name="exportBtn" Click="exportBtn_Click"></Button>
+        <Button Grid.Row="6" Content="Экспорт в Word" x:Name="exportWordBtn" Click="exportWordBtn_Click"></Button>
     </Grid>
 </Window>
