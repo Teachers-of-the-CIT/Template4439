@@ -42,11 +42,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -80,23 +84,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ExampleModel1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model_var2.Context.cs">
+    <Compile Include="Model_lab3_var2.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model_var2.Context.tt</DependentUpon>
+      <DependentUpon>Model_lab3_var2.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model_var2.cs">
+    <Compile Include="Model_lab3_var2.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model_var2.tt</DependentUpon>
+      <DependentUpon>Model_lab3_var2.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model_var2.Designer.cs">
+    <Compile Include="Model_lab3_var2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model_var2.edmx</DependentUpon>
+      <DependentUpon>Model_lab3_var2.edmx</DependentUpon>
     </Compile>
-    <Compile Include="var2.cs">
-      <DependentUpon>Model_var2.tt</DependentUpon>
+    <Compile Include="var2_lab3.cs">
+      <DependentUpon>Model_lab3_var2.tt</DependentUpon>
     </Compile>
     <Compile Include="var9.cs">
       <DependentUpon>ExampleModel1.tt</DependentUpon>
@@ -146,12 +150,12 @@
     <None Include="ExampleModel1.edmx.diagram">
       <DependentUpon>ExampleModel1.edmx</DependentUpon>
     </None>
-    <EntityDeploy Include="Model_var2.edmx">
+    <EntityDeploy Include="Model_lab3_var2.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model_var2.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model_lab3_var2.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model_var2.edmx.diagram">
-      <DependentUpon>Model_var2.edmx</DependentUpon>
+    <None Include="Model_lab3_var2.edmx.diagram">
+      <DependentUpon>Model_lab3_var2.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -214,15 +218,15 @@
       <DependentUpon>ExampleModel1.edmx</DependentUpon>
       <LastGenOutput>ExampleModel1.cs</LastGenOutput>
     </Content>
-    <Content Include="Model_var2.Context.tt">
+    <Content Include="Model_lab3_var2.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model_var2.edmx</DependentUpon>
-      <LastGenOutput>Model_var2.Context.cs</LastGenOutput>
+      <DependentUpon>Model_lab3_var2.edmx</DependentUpon>
+      <LastGenOutput>Model_lab3_var2.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model_var2.tt">
+    <Content Include="Model_lab3_var2.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model_var2.edmx</DependentUpon>
-      <LastGenOutput>Model_var2.cs</LastGenOutput>
+      <DependentUpon>Model_lab3_var2.edmx</DependentUpon>
+      <LastGenOutput>Model_lab3_var2.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,8 +4,8 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище ISRPOModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="var2">
+      <Schema Namespace="Хранилище ISRPOModel2" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="var2_lab3">
           <Key>
             <PropertyRef Name="IdServices" />
           </Key>
@@ -15,15 +15,15 @@
           <Property Name="CodeService" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Cost" Type="int" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="Хранилище ISRPOModelContainer">
-          <EntitySet Name="var2" EntityType="Self.var2" Schema="dbo" store:Type="Tables" />
+        <EntityContainer Name="Хранилище ISRPOModel2Container">
+          <EntitySet Name="var2_lab3" EntityType="Self.var2_lab3" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ISRPOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="var2">
+      <Schema Namespace="ISRPOModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="var2_lab3">
           <Key>
             <PropertyRef Name="IdServices" />
           </Key>
@@ -33,18 +33,18 @@
           <Property Name="CodeService" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Cost" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="ISRPOEntities_var2" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="var2" EntityType="Self.var2" />
+        <EntityContainer Name="ISRPOEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="var2_lab3" EntityType="Self.var2_lab3" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ISRPOModelContainer" CdmEntityContainer="ISRPOEntities_var2">
-          <EntitySetMapping Name="var2">
-            <EntityTypeMapping TypeName="ISRPOModel.var2">
-              <MappingFragment StoreEntitySet="var2">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ISRPOModel2Container" CdmEntityContainer="ISRPOEntities2">
+          <EntitySetMapping Name="var2_lab3">
+            <EntityTypeMapping TypeName="ISRPOModel2.var2_lab3">
+              <MappingFragment StoreEntitySet="var2_lab3">
                 <ScalarProperty Name="IdServices" ColumnName="IdServices" />
                 <ScalarProperty Name="NameServices" ColumnName="NameServices" />
                 <ScalarProperty Name="TypeOfService" ColumnName="TypeOfService" />

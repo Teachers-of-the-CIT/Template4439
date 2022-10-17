@@ -6,6 +6,9 @@ using System.Windows;
 using Excel = Microsoft.Office.Interop.Excel;
 using Word = Microsoft.Office.Interop.Word;
 using System.IO;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Template4439
 {
@@ -27,7 +30,6 @@ namespace Template4439
 
         private void importBtn_Click(object sender, RoutedEventArgs e)
         {
-            /*
             OpenFileDialog ofd = new OpenFileDialog()
             {
                 DefaultExt = "*.xls;*.xlsx",
@@ -71,12 +73,10 @@ namespace Template4439
                 }
             }
             MessageBox.Show("import success");
-            */
         }
 
         private void exportBtn_Click(object sender, RoutedEventArgs e)
         {
-            /*
             List<var9> all_employe;
 
             using (ISRPOEntities1 isrpoEntities = new ISRPOEntities1())
@@ -133,90 +133,123 @@ namespace Template4439
             }
             MessageBox.Show("export success");
             app.Visible = true;
-            */
         }
 
         private void importJsonBtn_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog ofd = new OpenFileDialog()
+            {
+                DefaultExt = "*.json",
+                Title = "Выберите файл базы данных"
+            };
 
+            if (!(ofd.ShowDialog() == true))
+                return;
+
+            string json = File.ReadAllText(ofd.FileName);
+            dynamic array = JsonConvert.DeserializeObject(json);
+
+            using (ISRPOEntities2 isrpoEntities = new ISRPOEntities2())
+            {
+                foreach (var item in array)
+                {
+                    isrpoEntities.var2_lab3.Add(new var2_lab3()
+                    {
+                        NameServices = item.NameServices.ToString(),
+                        TypeOfService = item.TypeOfService.ToString(),
+                        CodeService = item.CodeService.ToString(),
+                        Cost = Int32.Parse(item.Cost.ToString()),
+                    });
+                    isrpoEntities.SaveChanges();
+                }
+            }
+            MessageBox.Show("import json success");
         }
 
         private void exportWordBtn_Click(object sender, RoutedEventArgs e)
         {
-            List<var2> all_service;
+            List<var2_lab3> all_service;
 
-            using (ISRPOEntities_var2 isrpoEntities_var2 = new ISRPOEntities_var2())
+            using (ISRPOEntities2 isrpoEntities_var2 = new ISRPOEntities2())
             {
-                all_service = isrpoEntities_var2.var2.ToList().OrderBy(s => s.Cost).ToList();
+                all_service = isrpoEntities_var2.var2_lab3.OrderBy(s => s.Cost).ToList();
             }
-
-            int sheetCount = all_service.GroupBy(s => s.Cost).ToList().Count();
 
             var app = new Word.Application();
-           // app.SheetsInNewWorkbook = sheetCount;
             Word.Document document = app.Documents.Add();
 
-            var employeCategories = all_service.GroupBy(s => s.Cost).ToList();
-
-            for (int i = 0; i < sheetCount; i++)
+            for (int i = 0; i < 3; i++)
             {
-                int currentCategory = employeCategories[i].Key;
-
-                int startRowIndex = 2;
-                Word.Paragraph paragraph = document.Paragraphs.Add();
-                Word.Range range = paragraph.Range;
-                range.Text = Convert.ToString(all_service.Where(g => g.IdServices == sheetCount).FirstOrDefault().Cost);
-                paragraph.set_Style("Заголовок 1");
-                range.InsertParagraphAfter();
-                startRowIndex++;
-
-                Word.Paragraph tableParagraph = document.Paragraphs.Add();
-                Word.Range tableRange = tableParagraph.Range;
-                Word.Table studentsTable = document.Tables.Add(tableRange, sheetCount + 1, 4);
-                studentsTable.Borders.InsideLineStyle = studentsTable.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
-                studentsTable.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                Word.Range cellRange;
-                cellRange = studentsTable.Cell(1, 1).Range;
-                cellRange.Text = "Id";
-                cellRange = studentsTable.Cell(1, 2).Range;
-                cellRange.Text = "Название услуги";
-                cellRange = studentsTable.Cell(1, 3).Range;
-                cellRange.Text = "Вид услуги";
-                cellRange = studentsTable.Cell(1, 4).Range;
-                cellRange.Text = "Стоимость";
-                studentsTable.Rows[1].Range.Bold = 1;
-                studentsTable.Rows[1].Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
-
-                foreach (var2 service in all_service)
+                void func(double a, double b = double.PositiveInfinity)
                 {
-                    var e1 = service.Cost;
-                    if (service.Cost.Equals(currentCategory))
+                    int sheetCount = all_service.Where(s => s.Cost >= a & s.Cost <= b).ToList().Count();
+
+                    int startRowIndex = 2;
+
+                    Word.Paragraph paragraph = document.Paragraphs.Add();
+                    Word.Range range = paragraph.Range;
+                    if (i == 0)
+                        range.Text = "от 0 до 350";
+                    if (i == 1)
+                        range.Text = "от 250 до 800";
+                    if (i == 2)
+                        range.Text = "от 800";
+                    paragraph.set_Style("Заголовок 1");
+                    range.InsertParagraphAfter();
+
+                    Word.Paragraph tableParagraph = document.Paragraphs.Add();
+                    Word.Range tableRange = tableParagraph.Range;
+                    Word.Table studentsTable = document.Tables.Add(tableRange, sheetCount + 1, 4);
+                    studentsTable.Borders.InsideLineStyle = studentsTable.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
+                    studentsTable.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                    Word.Range cellRange;
+                    cellRange = studentsTable.Cell(1, 1).Range;
+                    cellRange.Text = "Id";
+                    cellRange = studentsTable.Cell(1, 2).Range;
+                    cellRange.Text = "Название услуги";
+                    cellRange = studentsTable.Cell(1, 3).Range;
+                    cellRange.Text = "Вид услуги";
+                    cellRange = studentsTable.Cell(1, 4).Range;
+                    cellRange.Text = "Стоимость";
+                    studentsTable.Rows[1].Range.Bold = 1;
+                    studentsTable.Rows[1].Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+
+                    foreach (var2_lab3 service in all_service)
                     {
-                        cellRange = studentsTable.Cell(i + 1, 1).Range;
-                        cellRange.Text = service.IdServices.ToString();
-                        cellRange.ParagraphFormat.Alignment =
-                        Word.WdParagraphAlignment.wdAlignParagraphCenter;
-                        cellRange = studentsTable.Cell(i + 1, 2).Range;
-                        cellRange.Text = service.NameServices.ToString();
-                        cellRange.ParagraphFormat.Alignment =
-                        Word.WdParagraphAlignment.wdAlignParagraphCenter;
-                        cellRange = studentsTable.Cell(i + 1, 3).Range;
-                        cellRange.Text = service.TypeOfService.ToString();
-                        cellRange.ParagraphFormat.Alignment =
-                        Word.WdParagraphAlignment.wdAlignParagraphCenter;
-                        cellRange = studentsTable.Cell(i + 1, 4).Range;
-                        cellRange.Text = service.Cost.ToString();
-                        cellRange.ParagraphFormat.Alignment =
-                        Word.WdParagraphAlignment.wdAlignParagraphCenter;
-                        startRowIndex++;
+                        if (service.Cost >= a && service.Cost <= b)
+                        {
+                            cellRange = studentsTable.Cell(startRowIndex, 1).Range;
+                            cellRange.Text = service.IdServices.ToString();
+                            cellRange.ParagraphFormat.Alignment =
+                            Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                            cellRange = studentsTable.Cell(startRowIndex, 2).Range;
+                            cellRange.Text = service.NameServices.ToString();
+                            cellRange.ParagraphFormat.Alignment =
+                            Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                            cellRange = studentsTable.Cell(startRowIndex, 3).Range;
+                            cellRange.Text = service.TypeOfService.ToString();
+                            cellRange.ParagraphFormat.Alignment =
+                            Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                            cellRange = studentsTable.Cell(startRowIndex, 4).Range;
+                            cellRange.Text = service.Cost.ToString();
+                            cellRange.ParagraphFormat.Alignment =
+                            Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                            startRowIndex++;
+                        }
                     }
                 }
+
+                if (i == 0)
+                    func(0, 350);
+                if (i == 1)
+                    func(250, 800);
+                if (i == 2)
+                    func(800, 2000);
             }
-            MessageBox.Show("export success");
+            MessageBox.Show("export word success");
             document.Words.Last.InsertBreak(Word.WdBreakType.wdPageBreak);
             app.Visible = true;
-            document.SaveAs2(@"C:\Users\Ilshat\Desktop\outputFileWord.docx");
         }
     }
 }
