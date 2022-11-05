@@ -84,6 +84,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+	<Page Include="4439_Sysorova.xaml">
+		 <SubType>Designer</SubType>
+		 <Generator>MSBuild:Compile</Generator>
+	</Page>
     <Page Include="4439_Vakhitova.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -98,9 +102,9 @@
     <Compile Include="4439_Burkova.xaml.cs">
       <DependentUpon>4439_Burkova.xaml</DependentUpon>
     </Compile>
-    <Compile Include="4439_Kostyaeva.xaml.cs">
+    <Compile Include="4439_Kostyaeva.xaml.cs"/>
       <DependentUpon>4439_Kostyaeva.xaml</DependentUpon>
-    <Compile Include="4439_Gilyazov.xaml.cs">
+    <Compile Include="4439_Gilyazov.xaml.cs"/>
       <DependentUpon>4439_Gilyazov.xaml</DependentUpon>
     <Compile Include="4439_Khayrullov.xaml.cs">
       <DependentUpon>4439_Khayrullov.xaml</DependentUpon>
@@ -111,6 +115,9 @@
     <Compile Include="4439_Petrova.xaml.cs">
       <DependentUpon>4439_Petrova.xaml</DependentUpon>
     </Compile>
+	  <Compile Include="4439_Sysorova.xaml.cs">
+		  <DependentUpon>4439_Sysorova.xaml</DependentUpon>
+	  </Compile>
     <Compile Include="4439_Vakhitova.xaml.cs">
       <DependentUpon>4439_Vakhitova.xaml</DependentUpon>
     </Compile>

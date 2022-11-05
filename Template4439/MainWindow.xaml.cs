@@ -77,5 +77,9 @@ namespace Template4439
         {
             new _4439_Khayrullov().Show();
         }
+        private void Sysorova_Click(object sender, RoutedEventArgs e)
+        {
+            new _4439_Sysorova().Show();
+        }
     }
 }
