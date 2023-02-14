@@ -21,3 +21,4 @@ Khayrullov Avel
 Krasnov Elisei
 
 SYSorova Ksusha
+Sharipov Denchik - the coolest man
